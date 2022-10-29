@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-void print_all_duty_sum(); 
+void print_all_duty_sum();
+
 void print_all_transactions();
+
 void print_all_info();
 
 int main(int argc, char *argv[]) {
 
-	system("clear");
+    system("clear");
     if (argc < 2) {
         printf("Use %s [some command] or -h to show list of commands\n", argv[0]);
         exit(0);
@@ -26,15 +28,15 @@ int main(int argc, char *argv[]) {
         print_all_info();
     }
 
-	return 0;
+    return 0;
 }
 
 void print_all_duty_sum() {
-	FILE *sumfile = fopen("/Users/anatolijmironcenko/Documents/c/duty/sum", "r");
-	FILE *sumtinkofffile = fopen("/Users/anatolijmironcenko/Documents/c/duty/tinkoffsum", "r");
+    FILE *sumfile = fopen("/Users/anatolijmironcenko/Documents/c/duty/sum", "r");
+    FILE *sumtinkofffile = fopen("/Users/anatolijmironcenko/Documents/c/duty/tinkoffsum", "r");
     float sum;
     float tinkoffsum;
-    fscanf(sumfile,"%f",&sum);
+    fscanf(sumfile, "%f", &sum);
     fscanf(sumtinkofffile, "%f", &tinkoffsum);
     fclose(sumtinkofffile);
     fclose(sumfile);
@@ -71,7 +73,7 @@ void print_all_info() {
     char trans[50];
     memset(&trans, '\0', 50);
     float sum, tinkoffsum;
-    fscanf(sumfile,"%f",&sum);
+    fscanf(sumfile, "%f", &sum);
     fscanf(sumtinkofffile, "%f", &tinkoffsum);
 
     printf("MOMEDUTY: -%.2f\n", sum);

@@ -8,7 +8,7 @@
 void print_duty_sum() {
     FILE *sumfile = fopen("/Users/anatolijmironcenko/Documents/c/duty/sum", "r");
     float sum;
-    fscanf(sumfile,"%f",&sum);
+    fscanf(sumfile, "%f", &sum);
     fclose(sumfile);
     printf("Sum of duty: -%.2f\n", sum);
 }
@@ -24,7 +24,7 @@ int add_duty_sum(float sum) {
     fputs("\n", transactionsfile);
 
     float newsum;
-    fscanf(sumfile,"%f", &newsum);
+    fscanf(sumfile, "%f", &newsum);
     fclose(sumfile);
     sumfile = fopen("/Users/anatolijmironcenko/Documents/c/duty/sum", "w");
     newsum += sum;
@@ -47,7 +47,7 @@ int del_duty_sum(float sum) {
     fputs("\n", transactionsfile);
 
     float newsum;
-    fscanf(sumfile,"%f", &newsum);
+    fscanf(sumfile, "%f", &newsum);
     fclose(sumfile);
     sumfile = fopen("/Users/anatolijmironcenko/Documents/c/duty/sum", "w");
     newsum -= sum;
